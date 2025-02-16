@@ -24,7 +24,7 @@ def menu(): #funcion principal
             opcion_numerica= int(opcion) #conversion opcion a entero
 
         except ValueError:
-            print("\nOpcion invalida, ingrese un numero valido")
+            print("\nOpcion invalida ❌, ingrese un numero valido")
 
             continue
         
@@ -32,9 +32,10 @@ def menu(): #funcion principal
             nombre_pelicula = input("\nIngrese el nombre de la pelicula: ")
             pelicula_nueva = pelicula(nombre_pelicula)
             catalogo.agregar_peliculas(pelicula_nueva)
+            print(f"\nPelicula {nombre_pelicula} ha sido ingresada correctamente ✔️")
 
         elif opcion_numerica == 2: 
-            catalogo.listar_peliculas()
+           catalogo.listar_peliculas() 
 
         elif opcion_numerica == 3:
             catalogo.eliminar_catalogo()
@@ -44,7 +45,8 @@ def menu(): #funcion principal
             break
 
         else:
-            print("\nOpcion invalida, ingrese la opcion nuevamente")
+            print("\nOpcion invalida ❌, ingrese la opcion nuevamente")
 
 #Llamo funcion principal
 menu()
+

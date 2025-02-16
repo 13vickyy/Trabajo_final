@@ -25,18 +25,18 @@ class catalogopeliculas: #nombre del catalogo y ruta del archivo txt
                 print("\nPeliculas en el catalogo: ")
 
                 for pelicula in peliculas:
-                   print(f"{pelicula.strip()}")
+                   print(f"-{pelicula.strip()}")
 
           else:
-                   print("\nEl catalogo esta vacio")  #si el archivo existe pero esta vacio
+                   print("\nEl catalogo esta vacio ❌")  #si el archivo existe pero esta vacio
         
         except FileNotFoundError:
-          print("\nEl catalogo no existe")
+          print("\nNo se ha ingresado ninguna pelicula aun ❌")
 
     def eliminar_catalogo(self):
        import os
        if os.path.exists(self.ruta_archivo):
           os.remove(self.ruta_archivo)
-          print("\nEl catalogo se ha eliminado correctamente")
+          print("\nEl catalogo se ha eliminado correctamente ❌")
        else:
-          print("\nEl catalogo no existe") #si YA se borró, o NUNCA existió
+          print("\nEl catalogo no existe ❌") #si YA se borró, o NUNCA existió
