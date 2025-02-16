@@ -33,7 +33,7 @@ class catalogopeliculas: #nombre del catalogo y ruta del archivo txt
         except FileNotFoundError:
           print("\nEl catalogo no existe")
 
-    def eliminar_peliculas(self):
+    def eliminar_catalogo(self):
        import os
        if os.path.exists(self.ruta_archivo):
           os.remove(self.ruta_archivo)

@@ -1,4 +1,4 @@
-from clases import pelicula, catalogopeliculas
+from mis_clases import pelicula, catalogopeliculas
 
 print("\nBienvenido al catalogo de peliculas")
 
@@ -14,23 +14,32 @@ def menu(): #funcion principal
         print("4. Salir")
 
         opcion= input("\nSeleccione una opcion: ")
+        
+        try:
+            opcion_numerica= int(opcion) #conversion opcion a entero
 
-        if opcion == 1:
+        except ValueError:
+            print("\nOpcion invalida, ingrese un numero valido")
+
+            continue
+        
+        if opcion_numerica == 1:
             nombre_pelicula = input("\nIngrese el nombre de la pelicula: ")
-            pelicula = pelicula(nombre_pelicula)
-            catalogo.agregar_peliculas(pelicula)
+            pelicula_nueva = pelicula(nombre_pelicula)
+            catalogo.agregar_peliculas(pelicula_nueva)
 
-        elif opcion == 2: 
-            catalogo.listar_peliculas() #continuar con codigo class
+        elif opcion_numerica == 2: 
+            catalogo.listar_peliculas()
 
-        elif opcion == 3:
-            catalogo.eliminar_peliculas() #continuar con codigo class
+        elif opcion_numerica == 3:
+            catalogo.eliminar_catalogo()
 
-        elif opcion == 4:
+        elif opcion_numerica == 4:
             print("\nSaliendo del programa")
             break
 
         else:
             print("\nOpcion invalida, ingrese la opcion nuevamente")
 
-            
+#Llamo funcion principal
+menu()
