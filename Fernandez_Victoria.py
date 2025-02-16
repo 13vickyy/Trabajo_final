@@ -6,12 +6,17 @@ def menu(): #funcion principal
     nombre_catalogo = input("Ingrese un nombre de catalogo: ")
     catalogo = catalogopeliculas(nombre_catalogo)
 
+    opciones= {
+        1: "Agregar peliculas",
+        2: "Listar peliculas",
+        3: "Eliminar catalogo de peliculas",
+        4: "Salir"
+    }
+
     while True:
         print("\nMenu de opciones: ")
-        print("1. Agregar peliculas")
-        print("2. Listar peliculas")
-        print("3. Eliminar catalogo de peliculas")
-        print("4. Salir")
+        for clave, valor in opciones.items():
+            print(f"{clave}.{valor}")
 
         opcion= input("\nSeleccione una opcion: ")
         
